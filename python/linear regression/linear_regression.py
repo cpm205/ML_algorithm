@@ -48,7 +48,8 @@ print(X.shape)
 print(theta.shape)
 print(y.shape)
 
-print(cf.computeCost(X, y, theta))
+print("Cost Function:",cf.computeCost(X, y, theta))
+
 
 # initialize variables for learning rate and iterations
 alpha = 0.01  #learning rate
