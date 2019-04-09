@@ -10,3 +10,9 @@ def computeCost(X, y, theta):
     thetaT = theta.T
     inner = np.power(((X * thetaT) - y), 2)
     return np.sum(inner) / (2 * len(X))
+
+def myComputeCost(X, y, theta):
+    thetaTrans = theta.T
+    values = np.power((X * thetaTrans - y), 2)
+    sumValues = np.sum(values)
+    return sumValues / (2 * len(X))
