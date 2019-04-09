@@ -58,9 +58,10 @@ iters = 1000
 
 # perform gradient descent to "fit" the model parameters
 g, cost = gd.gradientDescent(X, y, theta, alpha, iters)
-print(g)
-print(cost)
-print(cf.computeCost(X, y, g))
+print("Gradient Descent: ", g)
+print("cost: ", cost)
+print("Cost Function with GD: ", cf.computeCost(X, y, g))
+print("my Cost Function with GD: ", cf.myComputeCost(X, y, g))
 
 x = np.linspace(data.Population.min(), data.Population.max(), 100)
 f = g[0, 0] + (g[0, 1] * x)
