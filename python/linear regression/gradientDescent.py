@@ -27,7 +27,22 @@ def gradientDescent(X, y, theta, alpha, iters):
 def myGD(X, y, theta, learningRate, iters):
     #Create numpy array with all zeros based on shape of weight(paramter)
     zeroArray = np.zeros(theta.shape)
-    zeroMatrix = np.matrix(zeroArray)
-    params = theta.ravel().shape[1]
-    intParams = int(theta.ravel().shape[1])
+    tempThetaResult = np.matrix(zeroArray) # iters * 2
+    params = theta.ravel().shape[1] # = 2, because 2 params
+    intParams = int(params)# conver to int
+    cost = np.zeros(iters)
+    
+    for i in range(iters):
+        diff = (X * theta.T) - y
+        
+        #update Theta values
+        for j in range(intParams):
+            term = np.multiply(diff, X[:,j])
+            tempThetaResult[0,j] = theta[0,j] - learningRate/len(X) * np.sum(term)
+        theta = tempThetaResult
+        cost[i] = cf.computeCost(X, y, theta)
+    return theta, cost
+        
+        
+            
     

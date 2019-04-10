@@ -54,12 +54,15 @@ print("my Cost Function:",cf.myComputeCost(X, y, theta))
 
 # initialize variables for learning rate and iterations
 alpha = 0.01  #learning rate
-iters = 1000
+iters = 2000
 
 # perform gradient descent to "fit" the model parameters
 g, cost = gd.gradientDescent(X, y, theta, alpha, iters)
 print("Gradient Descent: ", g)
 print("cost: ", cost)
+myGD, myCost = gd.myGD(X, y, theta, alpha, iters)
+print("my Gradient Descent: ", myGD)
+print("my cost: ", myCost)
 print("Cost Function with GD: ", cf.computeCost(X, y, g))
 print("my Cost Function with GD: ", cf.myComputeCost(X, y, g))
 
