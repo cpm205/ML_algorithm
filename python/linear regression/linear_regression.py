@@ -50,7 +50,7 @@ print(y.shape)
 
 print("Cost Function:",cf.computeCost(X, y, theta))
 print("my Cost Function:",cf.myComputeCost(X, y, theta))
-
+print("my Cost Function 2:",cf.myComputeCost2(X, y, theta))
 
 # initialize variables for learning rate and iterations
 alpha = 0.01  #learning rate
@@ -60,9 +60,17 @@ iters = 2000
 g, cost = gd.gradientDescent(X, y, theta, alpha, iters)
 print("Gradient Descent: ", g)
 print("cost: ", cost)
+
 myGD, myCost = gd.myGD(X, y, theta, alpha, iters)
 print("my Gradient Descent: ", myGD)
 print("my cost: ", myCost)
+
+
+myGD2, myCost2 = gd.myGD2(X, y, theta, alpha, iters)
+print("my Gradient Descent 2: ", myGD2)
+print("my cost 2: ", myCost2)
+
+
 print("Cost Function with GD: ", cf.computeCost(X, y, g))
 print("my Cost Function with GD: ", cf.myComputeCost(X, y, g))
 
