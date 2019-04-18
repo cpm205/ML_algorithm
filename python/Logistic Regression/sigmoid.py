@@ -8,4 +8,4 @@ Created on Sat Apr 13 23:10:06 2019
 import numpy as np
 
 def sigmoid(z):
-    return 1 / (1 + np.exp(-z))
+    return 1 / (1 + np.exp(-z)) #e = Euler's number  = 2.71828
